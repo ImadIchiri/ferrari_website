@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul li {
+  list-style: none;
+}
+ul li a {
+  color: #000;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Maven Pro", sans-serif;
+}
+
+/* Start Header */
+.main_header {
+  position: sticky;
+  z-index: 99;
+  height: 70px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+}
+.main_header nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.main_header nav ul {
+  display: flex;
+  align-items: center;
+}
+.main_header nav ul li {
+  margin: 0 0.5rem;
+}
+.main_header nav ul li:not(:nth-of-type(4)) {
+  position: relative;
+}
+/* BEFORE: Create New Element */
+.main_header nav ul li:not(:nth-of-type(4))::before {
+  content: "";
+  position: absolute;
+  bottom: -3.5px;
+  left: 0;
+  width: 0%;
+  height: 1.5px;
+  border-radius: 0.5rem;
+  background-color: #000;
+  transform-origin: left;
+  transition: 0.3s ease-in-out;
+}
+.main_header nav ul li:not(:nth-of-type(4)):hover::before {
+  width: 100%;
+}
+.main_header nav ul li a {
+  font-weight: 400;
+}
+.main_header nav ul li a:hover {
+  /* font-weight: 500; */
+}
+.main_header nav ul div.logo img {
+  max-width: 55px;
+  object-fit: contain;
+}
+/* End Header */
+
+/* Start Landing Section */
+section.Landing {
+  position: relative;
+  z-index: 1;
+  min-height: calc(100vh - 70px);
+  width: 100%;
+  background-color: #fff;
+  background-image: url(../images/landing_bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section.Landing::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+section.Landing h1 {
+  font-size: 10rem;
+  color: #fff;
+  background: linear-gradient(
+    177.42deg,
+    rgba(255, 255, 255, 1) 43.59%,
+    rgba(0, 0, 0, 0) 75.52%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+section.Landing p {
+  color: #eee;
+  text-transform: uppercase;
+  margin: -5px auto 1.5rem auto;
+}
+section.Landing button {
+  border: 0;
+  padding: 0.5rem 5rem;
+  border-radius: 99rem;
+  font-weight: 500;
+  font-size: 1.15rem;
+  background-color: #ffc802;
+  cursor: pointer;
+}
+/* End Landing Section */
